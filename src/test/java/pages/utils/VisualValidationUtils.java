@@ -79,6 +79,60 @@ public class VisualValidationUtils {
     }
 
     /**
+     * Compare current screenshot with baseline and return detailed result object
+     * Includes metrics like diff pixels, percentage, and file paths
+     */
+    public static VisualValidationResult compareWithBaselineDetailed(WebDriver driver, String imageName) throws IOException {
+        ensureDirectoryExists(ACTUAL_DIR);
+        ensureDirectoryExists(DIFF_DIR);
+
+        // Take current screenshot using AShot
+        Screenshot actualScreenshot = new AShot().takeScreenshot(driver);
+
+        // Load baseline
+        File baselineFile = new File(BASELINE_DIR + File.separator + imageName + ".png");
+        if (!baselineFile.exists()) {
+            System.out.println("⚠ Baseline not found: " + baselineFile.getAbsolutePath());
+            captureBaseline(driver, imageName);
+            // Return match=true since baseline just created
+            return new VisualValidationResult(true, 0, 0, baselineFile.getAbsolutePath(), baselineFile.getAbsolutePath(), "");
+        }
+
+        BufferedImage baseline = ImageIO.read(baselineFile);
+
+        // Save actual screenshot
+        File actualFile = new File(ACTUAL_DIR + File.separator + imageName + ".png");
+        ImageIO.write(actualScreenshot.getImage(), "PNG", actualFile);
+
+        // Compare images
+        ImageDiffer differ = new ImageDiffer();
+        ImageDiff diff = differ.makeDiff(baseline, actualScreenshot.getImage());
+
+        File diffFile = new File(DIFF_DIR + File.separator + imageName + "_diff.png");
+        String diffFilePath = "";
+
+        if (diff.hasDiff()) {
+            // Save diff image
+            ImageIO.write(diff.getMarkedImage(), "PNG", diffFile);
+            diffFilePath = diffFile.getAbsolutePath();
+
+            int diffPixels = diff.getDiffSize();
+            long totalPixels = (long) baseline.getWidth() * baseline.getHeight();
+
+            System.out.println("❌ Visual difference detected for: " + imageName);
+            System.out.println("   Diff pixels: " + diffPixels + " / " + totalPixels);
+            System.out.println("   Percentage: " + String.format("%.2f%%", (diffPixels / (double)totalPixels) * 100));
+
+            return new VisualValidationResult(false, diffPixels, totalPixels, 
+                baselineFile.getAbsolutePath(), actualFile.getAbsolutePath(), diffFilePath);
+        } else {
+            System.out.println("✓ UI matches baseline image for: " + imageName);
+            return new VisualValidationResult(true, 0, baseline.getWidth() * baseline.getHeight(),
+                baselineFile.getAbsolutePath(), actualFile.getAbsolutePath(), diffFilePath);
+        }
+    }
+
+    /**
      * Update baseline with current screenshot (when UI intentionally changes)
      */
     public static void updateBaseline(WebDriver driver, String imageName) throws IOException {
