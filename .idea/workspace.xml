@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250410a1-da36-4871-9a2f-f1d240db2805" name="Changes" comment="proejct setup file added">
+    <list default="true" id="250410a1-da36-4871-9a2f-f1d240db2805" name="Changes" comment="visual validation added">
+      <change afterPath="$PROJECT_DIR$/JAVA_SETUP_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VISUAL_TESTING_GUIDE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/object/AddContactPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/object/ContactListPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/stepDefinations/ContactStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/stepDefinations/VisualValidationStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/steps/ContactSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/steps/VisualValidationSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/utils/VisualValidationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/stepdefinitions/BrowserSetupHooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/visual-baselines/contact-form.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/visual-baselines/contact-list-page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/visual-baselines/login-page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/junit-platform.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/junit-platform.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/object/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/object/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/stepDefinations/LoginStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/stepDefinations/LoginStepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/steps/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/steps/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/search/user_registration.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/search/user_registration.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +83,41 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CucumberTestSuite (1)">
-    <configuration name="Feature: LoginPagetest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Create a new user">
+    <configuration name="VisualRegressionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pages.tests.VisualRegressionTest" />
+      <module name="cucumber-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pages.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VisualUITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pages.tests.VisualUITest" />
+      <module name="cucumber-starter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pages.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: user_registration" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/LoginPagetest.feature" />
-      <option name="GLUE" value="com.example.definitions net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/search/user_registration.feature" />
+      <option name="GLUE" value="net.serenitybdd.cucumber.actors pages.stepDefinations starter.stepdefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="SerenityCucumberJunit5Demo" />
+      <module name="cucumber-starter" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Feature: LoginPagetest" />
+      <option name="SUGGESTED_NAME" value="Feature: user_registration" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -105,26 +149,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Searching for 'apple'" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/search/search_by_different_keywords.feature" />
-      <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.stepdefinitions" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="cucumber-starter" />
-      <option name="NAME_FILTER" value="^Searching for \'apple\'$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Searching for \'apple\'$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Searching for 'apple'" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CucumberTestSuite (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cucumber-starter" />
       <extension name="coverage">
@@ -140,28 +164,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CucumberTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SerenityCucumberJunit4Demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.runner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.runner" />
-      <option name="MAIN_CLASS_NAME" value="com.example.runner.CucumberTestSuite" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CucumberTestSuite (1)" />
         <item itemvalue="Cucumber Java.Scenario: Create a new user" />
-        <item itemvalue="Cucumber Java.Scenario: Searching for 'apple'" />
-        <item itemvalue="Cucumber Java.Feature: LoginPagetest" />
-        <item itemvalue="JUnit.CucumberTestSuite" />
+        <item itemvalue="Application.VisualUITest" />
+        <item itemvalue="Cucumber Java.Feature: user_registration" />
+        <item itemvalue="Application.VisualRegressionTest" />
+        <item itemvalue="JUnit.CucumberTestSuite (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -213,6 +222,12 @@
     <MESSAGE value="proejct setup" />
     <MESSAGE value="proejct setup completed" />
     <MESSAGE value="proejct setup file added" />
-    <option name="LAST_COMMIT_MESSAGE" value="proejct setup file added" />
+    <MESSAGE value="visual validation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual validation added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/serenityProject$VisualRegressionTest.ic" NAME="VisualRegressionTest Coverage Results" MODIFIED="1775282224124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pages.tests.*</FILTER>
+    </SUITE>
   </component>
 </project>
