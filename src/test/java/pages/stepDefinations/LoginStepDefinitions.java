@@ -14,7 +14,6 @@ public class LoginStepDefinitions {
 
     @Given("I navigate to the login page")
     public void i_navigate_to_the_login_page() {
-      //  login.openLoginPage();
-        loginPage.open();
+       login.openLoginPage();
     }
 }
